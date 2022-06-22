@@ -26,7 +26,7 @@ export default function Friends(props) {
             <h1>FRIENDS LIST</h1>
             <div className="friendsList">
                 {friends.map(friend => (
-                    <h2>{friend.name} - {friend.email}</h2>
+                    <h2>- {friend.name.toUpperCase()} - {friend.email.toUpperCase()}</h2>
                 ))}
             </div>
 

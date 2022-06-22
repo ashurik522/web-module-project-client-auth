@@ -36,7 +36,7 @@ export default function Login(props) {
                 <form className="form" onSubmit={submit}>
                     <input placeholder="Username" type="text" name="username" onChange={handleChanges} value={state.credentials.username}/>
                     <input placeholder="Password" type="password" name="password" onChange={handleChanges} value={state.credentials.password}/>
-                    <button>Login</button>
+                    <button>LOGIN</button>
                 </form>
             </div>
         </div>
