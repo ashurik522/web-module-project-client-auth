@@ -19,14 +19,12 @@ export default function Friends(props) {
             .catch(err => console.log(err))
     }
     console.log(friends)
-
-    
     return(
         <div className="friendsContainer">
             <h1>FRIENDS LIST</h1>
             <div className="friendsList">
                 {friends.map(friend => (
-                    <h2>- {friend.name.toUpperCase()} - {friend.email.toUpperCase()}</h2>
+                    <h2 key={friend.id}>- {friend.name.toUpperCase()} - {friend.email.toUpperCase()}</h2>
                 ))}
             </div>
 
