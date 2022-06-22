@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom';
 import Login from './components/login';
+import Friends from './components/friendlist';
 
 function App() {
   return (
@@ -27,7 +28,7 @@ function App() {
           </div>
           <Switch>
             <Route  path="/login" component={Login}/>
-            <Route  path="/friends" />
+            <Route  path="/friends" component={Friends} />
             <Route  path="/addfriend" />
             <Route  path="/" component={Login} />
           </Switch>
