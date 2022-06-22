@@ -5,6 +5,7 @@ import Login from './components/login';
 import Friends from './components/friendlist';
 import AddFriend from './components/addfriend';
 import { axiosWithAuth } from './utils/axiosWithAuth'
+import PrivateRoute from './utils/privateRoute';
 
 function App() {
   
@@ -40,8 +41,8 @@ function App() {
           </div>
           <Switch>
             <Route  path="/login" component={Login}/>
-            <Route  path="/friends" component={Friends} />
-            <Route  path="/addfriend" component={AddFriend}/>
+            <PrivateRoute  path="/friends" component={Friends} />
+            <PrivateRoute  path="/addfriend" component={AddFriend}/>
             <Route  path="/" component={Login} />
           </Switch>
         </div>    
