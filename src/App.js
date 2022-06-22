@@ -4,8 +4,19 @@ import { BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom';
 import Login from './components/login';
 import Friends from './components/friendlist';
 import AddFriend from './components/addfriend';
+import { axiosWithAuth } from './utils/axiosWithAuth'
 
 function App() {
+  
+  const logout = () => {
+    axiosWithAuth()
+      .post('/logout')
+      .then(res =>{
+        localStorage.removeItem('token')
+      })
+      .catch(err => console.log(err))
+  }
+
   return (
     <Router>
       <div className="App">
@@ -23,7 +34,7 @@ function App() {
                 <Link style={{color: "white"}} to='/addfriend'>Add Friend</Link>
               </li>
               <li>
-                <Link style={{color: "white"}} to='/login'>Logout</Link>
+                <Link onClick={logout} style={{color: "white"}} to='/login'>Logout</Link>
               </li>
             </ul>
           </div>
